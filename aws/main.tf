@@ -30,6 +30,4 @@ systemctl restart tomcat8
 HEREDOC
 }
 
-output "tomcat_public_ip" {
-  value = "${aws_instance.tomcat.*.public_ip}"
-}
+output "tomcat_public_ip" {value = "${aws_instance.tomcat.*.public_ip[0]}"}
